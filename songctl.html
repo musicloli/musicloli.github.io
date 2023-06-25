@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>musicloli控制</title>
+
+  </head>
+  <body>
+<h1>音乐控制
+</h1>
+<br>
+当前歌曲:<span id="cs"></span>
+<br>
+
+<br>
+<button type="button" id="stop" onclick="
+fetch('http://musiclolictl.akutan445.com:4949/changesongstate', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({'guildid':guildid,'action':'pause'})
+})"
+>暂停</button>
+
+ <button type="button" id="next"
+ onclick="
+fetch('http://musiclolictl.akutan445.com:4949/changesongstate', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({'guildid':guildid,'action':'next'})
+})"
+>下一首</button><button type="button" onclick="
+var songname=prompt('输入歌名/youtube链接/bilibili链接/网易云歌曲或歌单链接:');
+if (songname==''){
+    alert('?')
+}
+else{
+fetch('http://musiclolictl.akutan445.com:4949/requestnewsong', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({'songname':songname,'guildid':guildid})
+}).then(response => response.text())
+.then(response => alert(response))
+}
+
+" name="button">添加歌曲</button>
+<br>
+播放列表:<span id="pl"></span>
+<script type="text/javascript">
+  const prams = new URLSearchParams(window.location.search);
+  const guildid=prams.get("id")
+  async function ca(){
+  car=true
+  while(true){
+    fetch("http://musiclolictl.akutan445.com:4949/getcurrentsong?id="+guildid).then((response)=>response.text()).then((responsetext)=>{ document.getElementById("cs").innerHTML=responsetext});
+    fetch("http://musiclolictl.akutan445.com:4949/getcurrentqueue?id="+guildid).then((response)=>response.text()).then((responsetext)=>{ document.getElementById("pl").innerHTML=responsetext});
+
+   await new Promise(r => setTimeout(r, 2000));
+ }}
+  ca()
+
+</script>
+  </body>
+</html>

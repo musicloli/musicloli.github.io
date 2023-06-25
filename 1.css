@@ -1,0 +1,154 @@
+h1{
+font-family: 'yuanti', sans-serif;
+font-size:70px;
+  margin:0px;
+}
+.spoiler, .spoiler2{
+  color: black;
+  background-color:black;
+}
+
+.spoiler:hover{
+  color: white;
+  }
+
+.spoiler2:hover {
+  background-color:white;
+  }
+.center {
+text-align: center;
+border: 3px solid white;
+padding: 10px;
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.column {
+float: left;
+width: 25%;
+}
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+@media screen and (max-width: 600px) {
+.column {
+  width: 100%;
+}
+}
+
+
+hr{
+border: 3px solid gray;
+}
+h5{
+
+font-family: 'yuanti', sans-serif;
+font-size:30px;
+  margin:0px;
+}
+h4{
+
+font-family: 'yuanti', sans-serif;
+font-size:40px;
+  margin:0px;
+}
+html, body {
+margin:10; padding:10; height:100%; width:100%;
+}
+
+
+p{
+background-color:rgba(0,0,0,0.5);
+font-family: 'yuanti', sans-serif;
+color:rgb(220,221,222);
+}
+.invert{
+-webkit-filter:invert(100%);
+filter:invert(100%);
+
+}
+.text{
+font-family: 'yuanti', sans-serif;
+}
+.ptext{
+font-family: 'yuanti', sans-serif;
+font-size: 25px;
+}
+#flmenubar{
+color: white;
+font-family: 'yuanti', sans-serif;
+background-color: rgb(32,34,37);
+margin: 0px;
+
+font-size: 20px;
+float: top;
+position: fixed;
+color: white;
+font-family: 'yuanti', sans-serif;
+}
+
+a, a:active, a:visited { color: rgb(142,146,151); }
+a:hover{
+ color:white;
+}
+@font-face {
+ font-family: "yuanti" ;
+ src: url("./ResourceHanRoundedCN-Normal.woff") format('woff');
+}
+
+.stitle{
+	margin-top:5%;margin-bottom:5%;
+}
+
+
+
+.left{
+
+ padding-left: 10%;
+    float:left;
+    width:20%;
+    clear:both;
+    display:block
+}
+.column3 {
+	padding-bottom: auto;
+  float: left;
+  width: 33%;
+  /*
+	height: 25%;
+	width: 100%;
+  */
+}
+.column4 {
+	padding-bottom: auto;
+  float: left;
+  width: 25%;
+  /*
+	height: 25%;
+	width: 100%;
+  */
+}
+
+.centernotop{
+  display: block;
+margin-left: auto;
+margin-right: auto;
+  text-align: center;
+	 overflow-wrap: break-word;
+}
+
+
+.ft{
+	font-size:20px;
+margin-right: 10%;
+margin-left:10%;
+	 overflow-wrap: break-word;
+  word-wrap: break-word;
+  display: block;
+  border: 3px solid gray;
+
+}
